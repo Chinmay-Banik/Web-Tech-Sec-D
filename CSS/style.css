@@ -1,0 +1,71 @@
+#d1 {
+    background-color: green;
+    width: 300px;
+    height: 200px;
+    /* margin: 10px 20px 30px 40px; */
+    /* margin-top: ;
+    margin-bottom: ; */
+    /* padding: 10px; */
+    position: relative;
+
+
+}
+
+#d2 {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 110px;
+    top: 50px;
+    border-radius: 50%;
+    display: none;
+}
+
+/* Horizontal scrolling */
+.marquee-horizontal {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee-horizontal .marquee-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-horizontal 10s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Vertical scrolling */
+.marquee-vertical {
+    height: 200px; /* visible area */
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-vertical .marquee-content {
+    position: absolute;
+    width: 100%;
+    animation: scroll-vertical-up 8s linear infinite;
+}
+
+@keyframes scroll-vertical-up {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+@keyframes scroll-vertical-down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Optional: pause on hover */
+.marquee-horizontal:hover .marquee-content,
+.marquee-vertical:hover .marquee-content {
+    animation-play-state: paused;
+}
