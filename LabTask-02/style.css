@@ -33,7 +33,9 @@ h1 {
     cursor: pointer;
 }
 
-
+.win {
+    background-color: yellow;
+}
 
 button {
     padding: 10px 20px;
