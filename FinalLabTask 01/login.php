@@ -84,9 +84,6 @@ if (isset($_POST['submit'])) {
         $valid = false;
     }
 
-
-
-
     if ($valid) {
         echo "Login successful!";
     }
