@@ -25,11 +25,33 @@ session_start();
 <?php
 if (isset($_POST['submit'])) {
 
-    $profilePic = $_FILES['profilePic'];
+    $fileName = $_FILES['profilePic']['name'];
+    $fileSize = $_FILES['profilePic']['size'];
+    $ext = explode('.', $fileName);
     $valid = true;
 
-    if ($profilePic['name'] == "") {
+    if ($fileName == "") {
         echo "No file selected!<br>";
+        $valid = false;
+    }
+
+    $allowedExtensions = ['jpg', 'jpeg', 'png'];
+    $found = false;
+
+    foreach ($allowedExtensions as $extension) {
+        if (strtolower(end($ext)) == $extension) {
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        echo "Invalid file type! Only JPG, JPEG, and PNG are allowed.<br>";
+        $valid = false;
+    }
+
+    if ($fileSize > 4 * 1024 * 1024) {
+        echo "File size exceeds the limit of 4MB!<br>";
         $valid = false;
     }
 
