@@ -39,8 +39,8 @@
                 <td><?=$user['email']?></td>
                 <td>
                     <a href="edit.php?id=<?=$user['id']?>"> EDIT </a> |
-                    <a href="Details.php"> Details </a> |
-                    <a href="delete.php"> Delete </a> 
+                    <a href="Details.php?id=<?=$user['id']?>"> Details </a> |
+                    <a href="delete.php?id=<?=$user['id']?>"> Delete </a> 
                 </td>
             </tr>
     <?php }?>
