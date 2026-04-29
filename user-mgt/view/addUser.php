@@ -24,7 +24,7 @@ if (!empty($users)) {
     <br>
 
     <form method="post" action="../controller/addCheck.php">
-        Id: <input type="text" name="id" readonly value="<?php $newId; ?>" /> <br>
+        Id: <input type="text" name="id" readonly value="<?php echo $newId; ?>" /> <br>
         username: <input type="text" name="username" value="username" /> <br>
         Email: <input type="email" name="email" value="email" /> <br>
         <input type="submit" name="submit" value="Add User" />
