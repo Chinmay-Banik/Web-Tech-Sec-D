@@ -21,7 +21,8 @@
 <body>
         <h1>All User </h1>
         <a href='home.php'>Back </a> |
-        <a href='../controller/logout.php'>logout</a> 
+        <a href='../controller/logout.php'>logout</a> |
+        <a href='addUser.php'>Add User</a>
         <br>
 
         <table border=1>
