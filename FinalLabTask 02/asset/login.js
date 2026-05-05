@@ -12,7 +12,7 @@ function login(){
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open('POST', '../controller/loginCheck.php', true);
+    xhttp.open('POST', '../controller/auth.php', true);
     xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
     xhttp.onreadystatechange = function (){
@@ -28,5 +28,5 @@ function login(){
         }
     }
 
-    xhttp.send('user=' + data);
+    xhttp.send('type=login&user=' + data);
 }

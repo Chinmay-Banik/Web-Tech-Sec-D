@@ -17,7 +17,7 @@
 
     function addUser($user){
         $con = getConnection();
-        $sql = "insert into users values('{$user['username']}','{$user['password']}','{$user['email']}')";
+        $sql = "insert into users values('', '{$user['username']}', '{$user['password']}', '{$user['email']}')";
         $result = mysqli_query($con, $sql);
         if($result){
             return true;

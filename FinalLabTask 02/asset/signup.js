@@ -13,7 +13,7 @@ function signup() {
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open('POST', '../controller/signupCheck.php', true);
+    xhttp.open('POST', '../controller/auth.php', true);
 
     xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
@@ -30,5 +30,5 @@ function signup() {
 
     }
 
-    xhttp.send('user=' + data);
+    xhttp.send('type=signup&user=' + data);
 }
