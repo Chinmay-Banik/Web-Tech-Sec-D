@@ -1,0 +1,32 @@
+function login(){
+
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+
+    let user = {
+        'username': username,
+        'password': password
+    };
+
+    let data = JSON.stringify(user);
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.open('POST', '../controller/loginCheck.php', true);
+    xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+    xhttp.onreadystatechange = function (){
+        if(this.readyState == 4 && this.status == 200){
+
+            let response = JSON.parse(this.responseText);
+
+            if(response.status){
+                window.location.href = "../view/home.php";
+            }else{
+                document.getElementById('msg').innerHTML = response.message;
+            }
+        }
+    }
+
+    xhttp.send('user=' + data);
+}
